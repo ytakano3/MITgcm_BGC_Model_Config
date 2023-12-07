@@ -1,0 +1,39 @@
+# DIC Package Parameters
+# Carbonate chemistry parameters
+# Formulation of Millero, 2010
+# ----------
+ &ABIOTIC_PARMS
+  selectK1K2const = 5,
+ &
+
+# Iron cycle model parameters
+# ----------
+ &BIOTIC_PARMS
+  alphaUniform = 0.97e-10,
+  rainRatioUniform = 5.e-2,
+  KRemin = 0.95,
+ &
+
+# DIC forcing files
+# Atmospheric pco2, the CMIP6 preindustrial reference
+#                 , the 1992 value (ECCOv4r2) initial year
+# Prescribed annual atmospheric pco2, the CMIP6 input from 1850-2021 (historical+SSP585)
+#                 , input file name: "co2atmos.dat" 
+#                 , DIC_int1 = 2: read from a file and linearly interpolate between file entries
+#                 , DIC_int2 = 172: number entries to read
+#                 , DIC_int3 = 0: start timestep (this can be negative, not sure why...)
+#                 , DIC_int4 = 720: timestep between file entries (1 year)
+# ----------
+ &DIC_FORCING
+  DIC_iceFile ='ocean_bgc/fice.bin',
+  DIC_windFile ='ocean_bgc/tren_speed.bin',
+  DIC_silicaFile ='ocean_bgc/sillev1.bin',
+  DIC_ironFile ='ocean_bgc/mah_somtimind_molfem2s.bin',
+#  DIC_int1 = 2,
+#  DIC_int2 = 172,
+#  DIC_int3 = 0,
+#  DIC_int4 = 720,
+  DIC_int1 = 1,
+  DIC_pCO2 = 284.32e-6,
+# DIC_pCO2 = 356.23e-6,
+ &

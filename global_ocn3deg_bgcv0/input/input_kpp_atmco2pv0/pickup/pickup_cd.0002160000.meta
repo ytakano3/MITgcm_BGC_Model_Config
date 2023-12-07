@@ -1,0 +1,9 @@
+ simulation = { 'Global Ocean Biogeochemistry Model 2.8 degrees 15 vertical levels' };
+ nDims = [   2 ];
+ dimList = [
+   128,    1,  128,
+    64,    1,   64
+ ];
+ dataprec = [ 'float64' ];
+ nrecords = [         61 ];
+ timeStepNumber = [    2160000 ];
