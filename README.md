@@ -11,7 +11,7 @@ or transient atmospheric CO<sub>2</sub> from an input file (co2atmos.dat).
 ## Adjoint Configuration
 Global ocean biogeochemical adjoint configuration
 
-## Possible objective functions
+### Possible objective functions
 
 We are potentially interested in using the following as objective functions (i.e. quantities of interest):
 
@@ -20,7 +20,7 @@ We are potentially interested in using the following as objective functions (i.e
 
 Eventually, we will aim to include sample masks of each type in this repository. 
 
-## Possible independent variables
+### Possible independent variables
 
 We are also potentially interested in examining the following independent variables (i.e. controls):
 
@@ -29,7 +29,7 @@ We are also potentially interested in examining the following independent variab
 - Wind stress
 - Net heat flux
 
-## Installation 
+### Installation 
 Below is an example of how to check out this code and set up MCS within it. 
 ```
 git clone https://github.com/MITgcm/MITgcm.git
@@ -53,7 +53,7 @@ One useful naming convention to consider is to star the branch name with your in
 git push -u origin «YOUR_NEWBRANCH_NAME»
 ```
 
-## Compiling
+### Compiling
 To compile the adjoint code, one needs access to the `staf` script, which can be obtained via FastOpt. The forward code will be put together and sent to the FastOpt servers in Germany, where it will be passed through the TAF tool. Algorithmically differentiated adjoint code will then be returned and then compiled.
 
 Once `staf` is available, then you can use the script in the `build_ad` directory, which works for adjoint compilation. It assumes the default modules, which at present does not include NetCDF. For more information, see the MITgcm documentation on ARCHER2:
@@ -87,7 +87,7 @@ C o tape settings
 #define ALLOW_INIT_WHTAPEIO
 ```
 
-## Defining the masks 
+### Defining the masks 
 The generic cost function approach allows one to define the objective function as an integral over space and time. We include some example scripts for creating masks in this repository. For more information, see this part of the MITgcm documentation:
 
 https://mitgcm.readthedocs.io/en/latest/ocean_state_est/ocean_state_est.html#generic-cost-function
