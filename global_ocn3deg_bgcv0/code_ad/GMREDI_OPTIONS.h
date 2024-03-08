@@ -18,13 +18,14 @@ CEOP
 #ifdef ALLOW_GMREDI
 C     Package-specific Options & Macros go here
 
-C Designed to simplify the Ajoint code:
+C Designed to simplify the Adjoint code:
 C #define GMREDI_WITH_STABLE_ADJOINT
 C -- exclude the clipping/tapering part of the code that is not used
 C #define GM_EXCLUDE_CLIPPING
 C #define GM_EXCLUDE_FM07_TAP
 C #define GM_EXCLUDE_AC02_TAP
 C #define GM_EXCLUDE_TAPERING
+C Adjoint Modeling: Define "excluding" submesoscale eddies
 #define GM_EXCLUDE_SUBMESO
 
 C Allows to read-in background 3-D Redi and GM diffusivity coefficients
@@ -56,6 +57,7 @@ C  instead of the Skew-Flux form (=default)
 #define GM_BOLUS_ADVEC
 
 C Allows to use the Boundary-Value-Problem method to evaluate GM Bolus transport
+C Adjoint Modeling: Undefine BVP option
 #undef GM_BOLUS_BVP
 
 C Allow QG Leith variable viscosity to be added to GMRedi coefficient
