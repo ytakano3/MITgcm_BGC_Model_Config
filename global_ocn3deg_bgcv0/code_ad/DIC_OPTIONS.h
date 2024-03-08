@@ -22,12 +22,14 @@ C ABIOTIC OPTIONS
 C Compile Munhoven (2013) "Solvesaphe" package for pH/pCO2
 C  can still select Follows et al (2006) solver in data.dic,
 C  but will use solvesaphe dissociation coefficient options.
+C Adjoint Modeling: UNDEFINE this option.
 #undef CARBONCHEM_SOLVESAPHE
 
 C In S/R CARBON_CHEM convert ak1 and ak2 to the total pH scale
 C  consistent with other coefficients (currently on the seawater scale).
 C NOTE: Has NO effect when CARBONCHEM_SOLVESAPHE is defined (different
 C  coeffs are used).
+C Adjoint Modeling: DEFINE this option.
 #define CARBONCHEM_TOTALPHSCALE
 
 C BIOTIC OPTIONS
