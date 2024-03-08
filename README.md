@@ -1,7 +1,8 @@
 # MITgcm_BGC_Model_Config
 MITgcm model configurations, mainly utilizing the existing ocean biogeochemistry model.
 
-## global_ocn3deg_bgcv0 (use MITgcm checkpoint 68r)
+## Model Setup: global_ocn3deg_bgcv0 (use MITgcm checkpoint 68r)
+## Forward Configuration
 MITgcm global ocean biogeochemistry model configurations based on a verification (/tutorial_global_oce_biogeo),
 2.8 degrees, 15 non-uniform vertical levels. This configuration turns on KPP scheme (which is different from
 the verification) and code includes preformed and ideal age tracers (dic/code_preform_agev0 in my other repository).
@@ -16,7 +17,7 @@ Global ocean biogeochemical adjoint configuration
 We are potentially interested in using the following as objective functions (i.e. quantities of interest):
 
 - Heat content in the region of the North Atlantic anthropogenic carbon sink
-- DIC in the region of the North Atlantic anthropogenic carbon sink
+- Air-Sea CO<sub>2</sub> flux and DIC in the region of the North Atlantic anthropogenic carbon sink
 
 Eventually, we will aim to include sample masks of each type in this repository. 
 
@@ -25,7 +26,8 @@ Eventually, we will aim to include sample masks of each type in this repository.
 We are also potentially interested in examining the following independent variables (i.e. controls):
 
 - Kinematic sensitivity
-- Dynamic sensitivity 
+- Dynamic sensitivity
+- Carbonate chemistry sensitivity 
 - Wind stress
 - Net heat flux
 
