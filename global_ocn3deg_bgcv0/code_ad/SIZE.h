@@ -62,6 +62,7 @@ C                routine buffers.
       PARAMETER ( MAX_OLX = OLx,
      &            MAX_OLY = OLy )
 
+C Adjoint Modeling: Comment out nobsc
 C     for pkg/ctrl:
 C     INTEGER     nobcs
 C     PARAMETER ( nobcs = 4 )
