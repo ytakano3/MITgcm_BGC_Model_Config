@@ -13,7 +13,7 @@ C  and is set here (default 1)
 C Note (Y.T): the number of ptracers is 10, (dic package default is 4-6)
 C           : preformed trcers (DICpre, ALKpre, PO4pre, O2pre) are implemented
 C           : add ideal age tracer is 11
-C
+C Add lines for AUTODIFF option.
 C     Number of tracers
       INTEGER PTRACERS_num
       PARAMETER(PTRACERS_num = 11 )
