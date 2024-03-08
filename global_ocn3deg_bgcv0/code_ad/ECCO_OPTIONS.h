@@ -29,25 +29,39 @@ C   are specific to this package are assumed to be set in ECCO_CPPOPTIONS.h
 
 C-- Package-specific Options & Macros go here
 
-C allow for generic cost function and integral terms
+C Allow for generic cost function and integral terms
 #define ALLOW_GENCOST_CONTRIBUTION
-C allow for 3 dimensional generic terms
+C Allow for 3 dimensional generic terms
 #define ALLOW_GENCOST3D
+C GENCOST usage ... (c68r)
+C # undef ALLOW_GENCOST_1D
+C # undef ALLOW_GENCOST_SSTV4_OUTPUT
 
-C include global mean steric sea level correction
+C Allow Open-Boundary cost contributions (c68r) (not included)
+
+C Include global mean steric sea level correction
 #undef ALLOW_PSBAR_STERIC
-C allow for near-shore and high-latitude altimetry
+C #ifdef ATMOSPHERIC_LOADING
+C     Apply inverse barometer correction (c68r)
+C # define ALLOW_IB_CORR
+C #endif
+
+C Allow for near-shore and high-latitude altimetry
 #undef ALLOW_SHALLOW_ALTIMETRY
 #undef ALLOW_HIGHLAT_ALTIMETRY
 
-C allow for In-Situ Profiles cost function contribution
+C Allow for In-Situ Profiles cost function contribution
 #undef ALLOW_PROFILES_CONTRIBUTION
 
-C cost function output format
+C Cost function output format
 #define ALLOW_ECCO_OLD_FC_PRINT
 
-C re-activate deprecated codes (just in case ... but not recommended)
+C Re-activate deprecated codes (just in case ... but not recommended)
 #undef ECCO_CTRL_DEPRECATED
+
+C o Generate more text in STDOUT (c68r)
+C #undef ECCO_VERBOSE
+C #undef ALLOW_ECCO_DEBUG
 
 #endif /* ndef ECCO_CPPOPTIONS_H */
 #endif /* ALLOW_ECCO */
