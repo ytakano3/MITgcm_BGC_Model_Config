@@ -54,6 +54,12 @@ One useful naming convention to consider is to star the branch name with your in
 ```
 git push -u origin «YOUR_NEWBRANCH_NAME»
 ```
+#### Code modification for adjoint configuration
+DIC_OPTIONS.h: You need to `#undef CARBONCHEM_SOLVESAPHE` (and `#define CARBONCHEM_TOTALPHSCALE`) to compile the model for adjoint configuration. New carbonate chemistry options does not work at this point (March, 2024).
+DIC_VARS.h: You need to change the name of COMMON BLOCK, now `COMMON /CARBONCHEM_SAPHE/`, TAF will not be able to compile.
+GMREDI_OPTIONS.h: You need to turn off submesoscale eddies (parameterization) `#define GM_EXCLUDE_SUBMESO` and BVP method `#undef GM_BOLUS_BVP`.
+SIZE.h, PTRACERS_SIZE.h: Minor modification (see the header files, different from the one in verification).
+packages.conf: Add necessary packages for adjoint configuration (`ecco, autodiff, cost, ctrl, grdchk`).
 
 ### Compiling
 To compile the adjoint code, one needs access to the `staf` script, which can be obtained via FastOpt. The forward code will be put together and sent to the FastOpt servers in Germany, where it will be passed through the TAF tool. Algorithmically differentiated adjoint code will then be returned and then compiled.
@@ -81,7 +87,7 @@ This strategy allows you to keep as much in memory as possible, minimising the I
 
 Another way to adjust performance is to adjust how tapelevel I/O is handled. Although it is machine dependent, the following strategy by Gael Forget has worked well in the past:
 ```
-C o tape settings
+C o Tape settings
 #define ALLOW_AUTODIFF_WHTAPEIO
 #define AUTODIFF_USE_OLDSTORE_2D
 #define AUTODIFF_USE_OLDSTORE_3D
