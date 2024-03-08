@@ -170,6 +170,7 @@ C  selectPHsolver :: sets the pH solver to use:
 C     =1 :: use the GENERAL solver ;  =2 :: use SEC solver ;
 C     =3 :: use FAST solver routine.
 
+C Adjoint Modeling: Change COMMON BLOCK NAME.
        COMMON /CARBONCHEM_SAPHE/
      &                     cat, akn, akhs, aphscale, Ksp_TP_Arag,
      &                     at_maxniter,
