@@ -1,10 +1,13 @@
 # Packages
  &PACKAGES
- useGMRedi =.TRUE.,
- usePTRACERS =.TRUE.,
- useGCHEM =.TRUE.,
-# useMNC =.TRUE.,
- useDiagnostics =.TRUE.,
- useKPP =.TRUE.,
+ useAUTODIFF = .TRUE.,
+ useECCO = .TRUE.,
+ useCTRL = .TRUE.,
+ useGMRedi = .TRUE.,
+ usePTRACERS = .TRUE.,
+ useGCHEM = .TRUE.,
+# useMNC = .TRUE.,
+ useDiagnostics = .FALSE.,
+ useKPP = .TRUE.,
  &
   

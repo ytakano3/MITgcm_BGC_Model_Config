@@ -1,0 +1,1 @@
+# Following the current organizational scheme, we could put the binary mask files here

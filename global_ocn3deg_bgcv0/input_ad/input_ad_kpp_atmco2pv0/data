@@ -82,6 +82,7 @@
  dumpFreq = 2592000.,
  taveFreq = 2592000.,
  monitorFreq= 2592000.,
+ adjMonitorFreq= 2592000.,
 
 # pChkptFreq = 31104000.,
 # chkptFreq = 31104000.,

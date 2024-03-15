@@ -1,0 +1,37 @@
+# *********************
+# ECCO controlvariables
+# *********************
+ &CTRL_NML
+#ctrlUseGen=.TRUE.,
+ &
+#
+# *********************
+# names for ctrl_pack/unpack
+# *********************
+ &CTRL_PACKNAMES
+ &
+#
+# *********************
+# names for CTRL_GENARR, CTRL_GENTIM
+# *********************
+ &CTRL_NML_GENARR
+#
+ xx_genarr3d_file(1)   = 'xx_theta',
+ xx_genarr3d_weight(1) = 'ones3D.bin',
+#
+#xx_genarr3d_file(2)   = 'xx_uvel',
+#xx_genarr3d_weight(2) = 'ones3D.bin',
+#
+#xx_genarr3d_file(3)   = 'xx_vvel',
+#xx_genarr3d_weight(3) = 'ones3D.bin',
+#
+#xx_genarr2d_file(4) = 'xx_bottomdrag',
+#xx_genarr2d_weight(4) = 'ones2D.bin'
+#
+#xx_gentim2d_file(5) = 'xx_tauu',
+#xx_gentim2d_weight(5) = 'ones2D.bin'
+#
+#xx_gentim2d_file(6) = 'xx_tauv',
+#xx_gentim2d_weight(6) = 'ones2D.bin'
+#
+ &
