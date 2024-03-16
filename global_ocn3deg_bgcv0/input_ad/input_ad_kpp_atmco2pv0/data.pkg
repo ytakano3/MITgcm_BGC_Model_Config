@@ -9,5 +9,6 @@
 # useMNC = .TRUE.,
  useDiagnostics = .FALSE.,
  useKPP = .TRUE.,
+ useCAL = .TRUE.,
  &
   

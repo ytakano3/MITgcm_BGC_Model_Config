@@ -16,22 +16,55 @@
 # *********************
  &CTRL_NML_GENARR
 #
+ xx_gentim3d_weight(1) = 'wt_ones.data',
+ xx_gentim3d_file(1)='xx_ptr01',
+ xx_gentim3d_startdate1(1)=19920101,
+ xx_gentim3d_startdate2(1)=60000,
+ xx_gentim3d_period(1)=1209600.0,
+ mult_gentim3d(1) = 0.,
+#
+ xx_gentim2d_weight(2) = 'wt_ones.data',
+ xx_gentim2d_file(2)='xx_tauu',
+ xx_gentim2d_startdate1(2)=19920101,
+ xx_gentim2d_startdate2(2)=60000,
+ xx_gentim2d_period(2)=1209600.0,
+ mult_gentim2d(2) = 0.,
+#
+ xx_gentim2d_weight(3) = 'wt_ones.data',
+ xx_gentim2d_file(3)='xx_tauv',
+ xx_gentim2d_startdate1(3)=19920101,
+ xx_gentim2d_startdate2(3)=60000,
+ xx_gentim2d_period(3)=1209600.0,
+ mult_gentim2d(3) = 0.,
+#
+ xx_gentim2d_weight(4) = 'wt_ones.data',
+ xx_gentim2d_file(4)='xx_qnet',
+ xx_gentim2d_startdate1(4)=19920101,
+ xx_gentim2d_startdate2(4)=60000,
+ xx_gentim2d_period(4)=1209600.0,
+ mult_gentim2d(4) = 0.,
+#
+ xx_gentim2d_weight(5) = 'wt_ones.data',
+ xx_gentim2d_file(5)='xx_empmr',
+ xx_gentim2d_startdate1(5)=19920101,
+ xx_gentim2d_startdate2(5)=60000,
+ xx_gentim2d_period(5)=1209600.0,
+ mult_gentim2d(5) = 0.,
+#
  xx_genarr3d_file(1)   = 'xx_theta',
- xx_genarr3d_weight(1) = 'ones3D.bin',
+ xx_genarr3d_weight(1) = 'wt_ones.data',
+ mult_genarr3d(1) = 0.,
 #
-#xx_genarr3d_file(2)   = 'xx_uvel',
-#xx_genarr3d_weight(2) = 'ones3D.bin',
+#xx_genarr3d_file(2)   = 'xx_kapgm',
+#xx_genarr3d_weight(2) = 'wt_ones.data',
+#mult_genarr3d(2) = 0.,
 #
-#xx_genarr3d_file(3)   = 'xx_vvel',
-#xx_genarr3d_weight(3) = 'ones3D.bin',
+#xx_genarr3d_file(3)   = 'xx_kapredi',
+#xx_genarr3d_weight(3) = 'wt_ones.data',
+#mult_genarr3d(3) = 0.,
 #
-#xx_genarr2d_file(4) = 'xx_bottomdrag',
-#xx_genarr2d_weight(4) = 'ones2D.bin'
-#
-#xx_gentim2d_file(5) = 'xx_tauu',
-#xx_gentim2d_weight(5) = 'ones2D.bin'
-#
-#xx_gentim2d_file(6) = 'xx_tauv',
-#xx_gentim2d_weight(6) = 'ones2D.bin'
+#xx_genarr3d_file(4)   = 'xx_diffkr',
+#xx_genarr3d_weight(4) = 'wt_ones.data',
+#mult_genarr3d(4) = 0.,
 #
  &

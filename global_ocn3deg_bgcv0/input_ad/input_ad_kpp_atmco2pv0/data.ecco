@@ -7,13 +7,13 @@
 # ECCO generic cost functions
 # ***************************
  &ECCO_GENCOST_NML
- gencost_name(1) = 'testHeatContent',
- gencost_barfile(1) = 'm_boxmean_theta',
- gencost_avgperiod(1) = 'day',
- gencost_itracer(1) = 1,
- gencost_msk_is3d(1)=.FALSE.,
+ gencost_name(1) = 'nameOfExperiment',
+ gencost_barfile(1) = 'm_boxmean_ptracer',
+ gencost_avgperiod(1) = 'month',
+ gencost_itracer(1) = 5,
+ gencost_msk_is3d(1)= .TRUE.,
  gencost_outputlevel(1) = 1,
- gencost_mask(1) = 'ones2D',
+ gencost_mask(1) = 'mask3D',
  mult_gencost(1) = 1.0D9,
 #
  &
