@@ -7,7 +7,7 @@
  usePTRACERS = .TRUE.,
  useGCHEM = .TRUE.,
 # useMNC = .TRUE.,
- useDiagnostics = .FALSE.,
+ useDiagnostics = .TRUE.,
  useKPP = .TRUE.,
  useCAL = .TRUE.,
  &
