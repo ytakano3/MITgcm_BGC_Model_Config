@@ -26,10 +26,10 @@
 # Full list at:
 # https://mitgcm.readthedocs.io/en/latest/outp_pkgs/outp_pkgs.html#adjoint-variables
  &
-  fileName(1)    = 'ADJDiag',
-  fields(1:4,1)  = 'ADJtaux  ','ADJtauy  ','ADJqnet  ',
+  fileName(2)    = 'ADJDiag',
+  fields(1:4,2)  = 'ADJtaux  ','ADJtauy  ','ADJqnet  ',
                    'ADJempmr ',
-  frequency(1)   = 2592000.,
+  frequency(2)   = 2592000.,
  &
 
 #--------------------
