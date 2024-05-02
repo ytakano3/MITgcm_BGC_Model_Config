@@ -1,0 +1,12 @@
+#
+# *******************
+# Calendar Parameters
+# *******************
+ &CAL_NML
+#TheCalendar='model',
+ TheCalendar='gregorian',
+#calendarDumps=.TRUE.,
+ calendarDumps=.FALSE.,
+ startDate_1=19920101
+ startDate_2=120000,
+ &

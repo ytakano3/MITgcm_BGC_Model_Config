@@ -79,15 +79,19 @@
 # ----------
  pChkptFreq = 2592000.,
  chkptFreq = 2592000.,
+ adjDumpFreq = 2592000.,
  dumpFreq = 2592000.,
  taveFreq = 2592000.,
  monitorFreq= 2592000.,
+ adjMonitorFreq= 2592000.,
 
 # pChkptFreq = 31104000.,
 # chkptFreq = 31104000.,
 # dumpFreq = 31104000.,
+# adjDumpFreq = 31104000.,
 # taveFreq = 31104000.,
 # monitorFreq= 31104000.,
+# adjMonitorFreq= 31104000.,
 
 # Relaxation timescale
 # ----------
