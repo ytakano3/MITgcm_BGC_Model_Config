@@ -1,0 +1,15 @@
+ &MNC_01
+# MNC Settings
+# mnc_echo_gvtypes=.FALSE.,
+# mnc_use_indir=.FALSE.,
+ mnc_use_outdir=.TRUE.,
+ mnc_outdir_str='mnc_netcdf',
+# mnc_outdir_date=.TRUE.,
+# NetCDF Output Settings
+ monitor_mnc=.TRUE.,
+ timeave_mnc=.FALSE.,
+ snapshot_mnc=.FALSE.,
+ pickup_write_mnc=.FALSE.,
+ pickup_read_mnc =.FALSE.,
+ readgrid_mnc=.TRUE.,
+ &

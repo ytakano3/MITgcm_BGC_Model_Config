@@ -1,0 +1,161 @@
+# ====================
+# | Model parameters |
+# Note(Y.T): global 2.8 degrees, 15 levels
+# ====================
+#
+# PARM01: Continuous equation parameters
+ &PARM01
+ tRef = 15*20.,
+ sRef = 15*35.,
+ viscA4 = 0.,
+ viscAh = 2.E5,
+#-- diffKzT = 3.E-5,
+#-- diffKzS = 3.E-5,
+ diffKhT = 0.E3,
+ diffKhS = 0.E3,
+ viscAz = 1.E-3,
+ diffKrBL79surf = 3.E-5,
+ diffKrBL79deep = 13.E-5,
+ diffKrBL79Ho = -2000.,
+ diffKrBL79scl = 150.,
+ gravity = 9.81,
+ rhoConst = 1035.,
+ rhoConstFresh = 1000.,
+ implicitFreeSurface = .TRUE.,
+ eosType = 'JMD95Z',
+ implicitDiffusion = .TRUE.,
+ implicitViscosity = .TRUE.,
+# Changed the advection scheme(originally Oct 3rd, 2023)
+# '30' is the default, 3rd order DST (tracer linear, momentum non-linear)
+# '77' is second-order flux limiters (non-linear)
+# "staggerTimeStep" is turned on
+#
+# KPP is turned on, need to turn off "ivdc_kappa"
+# exactConserv is turned on (not in the verification),
+# you should always turn this on (from Dave Munday)
+#
+# I have included linear free surface tracer conservation, salt balance
+# (you need to compile the model with "#define ALLOW_BALANCE_RELAX" turned on
+# in CPP_OPTIONS.h), additional option "useRealFreshWaterFlux" turned on
+# ----------
+#-- ivdc_kappa = 100.,
+ tempAdvScheme = 30,
+ saltAdvScheme = 30,
+#-- tempAdvScheme = 77,
+#-- saltAdvScheme = 77,
+ allowFreezing = .TRUE.,
+# New settings for conservation, freshwater and salinity balance
+ exactConserv =.TRUE.,
+ linFSConserveTr =.TRUE.,
+ useRealFreshWaterFlux =.TRUE.,
+ selectBalanceEmPmR = 1,
+ convertFW2Salt = -1,
+ balanceSaltClimRelax =.TRUE.,
+# Turn on looped cells
+ hFacMin = .1,
+ hFacMindz = 50.,
+ useCDscheme = .TRUE.,
+ useSinglecpuIO =.TRUE.,
+ staggerTimeStep =.TRUE.,
+ &
+
+# PARM02: Elliptic solver parameters
+# ----------
+ &PARM02
+ cg2dMaxIters=1000,
+ cg2dTargetResidual=1.E-13,
+ &
+
+# PARM03: Time stepping parameters
+# nTimeSteps = 720: 1 year simulation
+# ----------
+ &PARM03
+ nIter0 = 0,
+# nIter0 = 360000,
+# nIter0 = 720000,
+# nIter0 = 1080000,
+# nIter0 = 1440000,
+# nIter0 = 1800000,
+# nIter0 = 2160000,
+# nIter0 = 2520000,
+# nIter0 = 2880000,
+# nIter0 = 3240000,
+# nIter0 = 3600000,
+# nIter0 = 3960000,
+# nIter0 = 4320000,
+# nIter0 = 4680000,
+# nIter0 = 5040000,
+
+# nTimeSteps = 720,
+# nTimeSteps = 7200,
+# nTimeSteps = 72000,
+ nTimeSteps = 360000,
+
+# Time increment is 900 seconds for physics
+# ----------
+ deltaTmom  = 900.,
+ tauCD = 321428.,
+# Time increment is 12 hours for tracers
+# ----------
+ deltaTtracer = 43200.,
+ deltaTClock = 43200.,
+ abEps = 0.1,
+
+# OUTPUT: frequency settings for sensitivity experiments
+# 2592000: monthly output
+# 31104000: annual output
+# ----------
+# pChkptFreq = 2592000.,
+# chkptFreq = 2592000.,
+# dumpFreq = 2592000.,
+# taveFreq = 2592000.,
+# monitorFreq= 2592000.,
+
+# pChkptFreq = 31104000.,
+# chkptFreq = 31104000.,
+# dumpFreq = 31104000.,
+# taveFreq = 31104000.,
+# monitorFreq= 31104000.,
+
+ pChkptFreq = 311040000.,
+ chkptFreq = 311040000.,
+ dumpFreq = 311040000.,
+ taveFreq = 311040000.,
+ monitorFreq= 31104000.,
+
+# Relaxation timescale
+# ----------
+ tauThetaClimRelax = 5184000.,
+ tauSaltClimRelax = 7776000.,
+ periodicExternalForcing =.TRUE.,
+ externForcingPeriod = 2592000.,
+ externForcingCycle = 31104000.,
+ &
+
+# Gridding parameters
+ &PARM04
+ usingSphericalPolarGrid=.TRUE.,
+ delZ=  50., 70.,  100., 140., 190., 
+       240., 290., 340., 390., 440., 
+       490., 540., 590., 640., 690.,
+ ygOrigin=-90.,
+ delX=128*2.8125,
+ delY=64*2.8125,
+ &
+
+# PARM05: Input datasets
+# ----------
+ &PARM05
+# checkIniTemp =.FALSE.,
+# checkIniSalt =.FALSE.,
+ bathyFile=      'bathy_3deg.bin',
+ hydrogThetaFile='ocean_phys/temp.10k.bin',
+ hydrogSaltFile= 'ocean_phys/salt.10k.bin',
+ zonalWindFile=  'ocean_phys/tren_taux.bin',
+ meridWindFile=  'ocean_phys/tren_tauy.bin',
+ thetaClimFile=  'ocean_phys/lev_monthly_temp.bin',
+ saltClimFile=   'ocean_phys/lev_monthly_salt.bin',
+ surfQFile=      'ocean_phys/shi_qnet.bin',
+ EmPmRFile=      'ocean_phys/shi_empmr_year.bin',
+ the_run_name=   'Global Ocean Biogeochemistry BLING Model 2.8 degrees 15 vertical levels',
+ &

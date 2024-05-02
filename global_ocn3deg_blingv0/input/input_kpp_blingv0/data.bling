@@ -1,0 +1,30 @@
+# BLING Parameters 
+# Carbonate chemistry (#define CARBONCHEM_SOLVESAPHE)
+# Solver
+# use Follows et al., (2006) solver (selectPHsolver = 0, does NOT work)
+# use Munhoven, (2013) solver (selectPHsolver = 1)
+# Formulation of Millero, 2010
+# 
+# Default (#undef CARBONCHEM_SOLVESAPHE & #define CARBONCHEM_TOTALPHSCALE)
+# Option, CaCO3 dissolution length scale (subject to omega), half of the default value
+ &ABIOTIC_PARMS
+#  selectPHsolver = 1,
+#  selectK1K2const = 5,
+ &
+
+ &BIOTIC_PARMS
+#  ca_remin_depth = 672.0,
+ &
+
+# BLING forcing files
+# Atmospheric pco2, the DIC package default preindustrial reference
+#                   the CMIP6 preindustrial reference
+# ----------
+ &BLING_FORCING
+  BLING_iceFile = 'ocean_bgc/fice.bin',
+  BLING_windFile = 'ocean_bgc/tren_speed.bin',
+  BLING_silicaFile = 'ocean_bgc/sillev1.bin',
+  BLING_ironFile = 'ocean_bgc/mah_flux_smooth.bin',
+  BLING_pCO2 = 278.00E-6,
+#  BLING_pCO2 = 284.32E-6,
+ &

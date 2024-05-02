@@ -1,0 +1,116 @@
+# PTRACERS
+# Note(Y.T): PTRACERS_numInUse = 8, BLING
+#          : Linear free surface in this configuration, turn conservation switch on
+#          : DIC and alkalinity includes freshwater forcing, set by PTRACERS_EvPrRn(1) and (2)
+#          : which is set to zero in freshwater (not strictly true but broad assumption).
+#          : Add Salt relaxation to EmP for PTRACERS.
+ &PTRACERS_PARM01
+ PTRACERS_numInUse = 8,
+ PTRACERS_useGMRedi = 8*.TRUE.,
+ PTRACERS_useKPP = 8*.TRUE.,
+ PTRACERS_addSrelax2EmP = .TRUE.,
+
+# Tracer #1 DIC
+ PTRACERS_names(1) = 'dic',
+ PTRACERS_long_names(1) = 'Dissolved Inorganic Carbon',
+ PTRACERS_units(1) = 'mol/m^3',
+ PTRACERS_advScheme(1) = 30,
+ PTRACERS_diffKh(1) = 1.E0,
+ PTRACERS_diffKr(1) = 3.E-5,
+ PTRACERS_linFSConserve(1) = .TRUE.,
+ PTRACERS_initialFile(1) = 'ocean_bgc/dic_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,1) = 15*2.0282,
+ PTRACERS_EvPrRn(1)= 0.,
+
+# Tracer #2 Alkalinity
+ PTRACERS_names(2) = 'alk',
+ PTRACERS_long_names(2) = 'Alkalinity',
+ PTRACERS_units(2) = 'mol/m^3',
+ PTRACERS_advScheme(2) = 30,
+ PTRACERS_diffKh(2) = 1.E0,
+ PTRACERS_diffKr(2) = 3.E-5,
+ PTRACERS_linFSConserve(2) = .TRUE.,
+ PTRACERS_initialFile(2) = 'ocean_bgc/alk_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,2) = 15*2.3086, 
+ PTRACERS_EvPrRn(2)= 0.,
+
+# Tracer #3 Dissolved Oxygen
+ PTRACERS_names(3) = 'o2',
+ PTRACERS_long_names(3) = 'Dissolved Oxygen',
+ PTRACERS_units(3) = 'mol/m^3',
+ PTRACERS_advScheme(3) = 30,
+ PTRACERS_diffKh(3) = 1.E0,
+ PTRACERS_diffKr(3) = 3.E-5,
+ PTRACERS_linFSConserve(3) = .TRUE.,
+ PTRACERS_initialFile(3) = 'ocean_bgc/o2_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,3) = 15*0.2,
+# PTRACERS_EvPrRn(3)= 0.,
+
+# Tracer #4 Nitrate
+ PTRACERS_names(4) = 'no3',
+ PTRACERS_long_names(4) = 'Nitrate',
+ PTRACERS_units(4) = 'mol/m^3',
+ PTRACERS_advScheme(4) = 30,
+ PTRACERS_diffKh(4) = 1.E0,
+ PTRACERS_diffKr(4) = 3.E-5,
+ PTRACERS_linFSConserve(4) = .TRUE.,
+ PTRACERS_initialFile(4) = 'ocean_bgc/no3_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,4) = 15*0.01,
+# PTRACERS_EvPrRn(4)= 0.,
+
+# Tracer #5 Phosphate
+ PTRACERS_names(5) = 'po4',
+ PTRACERS_long_names(5) = 'Phosphate',
+ PTRACERS_units(5) = 'mol/m^3',
+ PTRACERS_advScheme(5) = 30,
+ PTRACERS_diffKh(5) = 1.E0,
+ PTRACERS_diffKr(5) = 3.E-5,
+ PTRACERS_linFSConserve(5) = .TRUE.,
+ PTRACERS_initialFile(5) = 'ocean_bgc/po4_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,5) = 15*0.5438E-3,
+# PTRACERS_EvPrRn(5)= 0.,
+
+# Tracer #6 Iron
+ PTRACERS_names(6) = 'fet',
+ PTRACERS_long_names(6) = 'Dissolved Inorganic Iron',
+ PTRACERS_units(6) = 'mol Fe/m^3',
+ PTRACERS_advScheme(6) = 30,
+ PTRACERS_diffKh(6) = 1.E0,
+ PTRACERS_diffKr(6) = 3.E-5,
+ PTRACERS_linFSConserve(6) = .TRUE.,
+ PTRACERS_initialFile(6) = 'ocean_bgc/fe_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,6) = 15*0.6e-6,
+# PTRACERS_EvPrRn(6)= 0.,
+
+# Tracer #7 Dissolved Organic Nitrogen
+ PTRACERS_names(7) = 'don',
+ PTRACERS_long_names(7) = 'Dissolved Organic Nitrogen',
+ PTRACERS_units(7) = 'mol/m^3',
+ PTRACERS_advScheme(7) = 30,
+ PTRACERS_diffKh(7) = 1.E0,
+ PTRACERS_diffKr(7) = 3.E-5,
+ PTRACERS_linFSConserve(7) = .TRUE.,
+ PTRACERS_initialFile(7) = 'ocean_bgc/don_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,7) = 15*0.,
+# PTRACERS_EvPrRn(7)= 0.,
+
+# Tracer #8 Dissolved Organic Phosphorus
+ PTRACERS_names(8) = 'dop',
+ PTRACERS_long_names(8) = 'Dissolved Organic Phosphorus',
+ PTRACERS_units(8) = 'mol/m^3',
+ PTRACERS_advScheme(8) = 30,
+ PTRACERS_diffKh(8) = 1.E0,
+ PTRACERS_diffKr(8) = 3.E-5,
+ PTRACERS_linFSConserve(8) = .TRUE.,
+ PTRACERS_initialFile(8) = 'ocean_bgc/dop_init.bin',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+ PTRACERS_ref(1:15,8) = 15*0.,
+# PTRACERS_EvPrRn(8)= 0.,
+ &
