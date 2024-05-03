@@ -7,7 +7,8 @@ MITgcm global ocean biogeochemistry model configurations based on a verification
 2.8 degrees, 15 non-uniform vertical levels. This configuration turns on KPP scheme (which is different from
 the verification) and code includes preformed and ideal age tracers (dic/code_preform_agev0 in my other repository).
 This configuration starts from spun-up initial conditions (3000 years) and can run with constant atmospheric CO<sub>2</sub>
-or transient atmospheric CO<sub>2</sub> from an input file (co2atmos.dat).
+or transient atmospheric CO<sub>2</sub> from an input file (co2atmos.dat). However, for the adjoint simulations (test),
+we are not using the transient atmospheric CO<sub>2</sub>.
 
 ## Adjoint Configuration
 Global ocean biogeochemical adjoint configuration
