@@ -21,17 +21,19 @@ C     Package-specific Options & Macros go here
 C Designed to simplify the Adjoint code:
 C #define GMREDI_WITH_STABLE_ADJOINT
 C -- exclude the clipping/tapering part of the code that is not used
-C #define GM_EXCLUDE_CLIPPING
-C #define GM_EXCLUDE_FM07_TAP
-C #define GM_EXCLUDE_AC02_TAP
-C #define GM_EXCLUDE_TAPERING
+C Adjoint Modeling: Turned these options ON.
+#define GM_EXCLUDE_CLIPPING
+#define GM_EXCLUDE_FM07_TAP
+#define GM_EXCLUDE_AC02_TAP
+#undef GM_EXCLUDE_TAPERING
 C Adjoint Modeling: Define "excluding" submesoscale eddies
 #define GM_EXCLUDE_SUBMESO
 
 C Allows to read-in background 3-D Redi and GM diffusivity coefficients
 C Note: need these to be defined for use as control (pkg/ctrl) parameters
-#undef GM_READ_K3D_REDI
-#undef GM_READ_K3D_GM
+C Adjoint Modeling: Turned these options ON.
+#define GM_READ_K3D_REDI
+#define GM_READ_K3D_GM
 
 C This allows to use Visbeck et al formulation to compute K_GM+Redi
 #undef GM_VISBECK_VARIABLE_K

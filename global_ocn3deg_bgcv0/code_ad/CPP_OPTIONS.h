@@ -75,7 +75,7 @@ C   default because it is an unpopular historical left-over
 C o Include/exclude call to S/R CALC_DIFFUSIVITY
 #define INCLUDE_CALC_DIFFUSIVITY_CALL
 
-C o Allow full 3D specification of vertical diffusivity
+C o Allow full 3D specification of vertical diffusivity*
 #undef ALLOW_3D_DIFFKR
 
 C o Allow latitudinally varying BryanLewis79 vertical diffusivity
@@ -86,7 +86,7 @@ C Code: /model/src/ini_mixing.F
 C o Exclude/allow partial-cell effect (physical or enhanced) in vertical mixing
 C   this allows to account for partial-cell in vertical viscosity and diffusion,
 C   either from grid-spacing reduction effect or as artificially enhanced mixing
-C   near surface & bottom for too thin grid-cell
+C   near surface & bottom for too thin grid-cell*
 #undef EXCLUDE_PCELL_MIX_CODE
 
 C o Exclude/allow to use isotropic 3-D Smagorinsky viscosity as diffusivity

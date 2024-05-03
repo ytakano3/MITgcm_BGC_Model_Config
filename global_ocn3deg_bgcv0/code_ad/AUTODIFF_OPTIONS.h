@@ -52,7 +52,8 @@ C o use divided adjoint to split adjoint computations
 #undef ALLOW_DIVIDED_ADJOINT_MPI
 
 C o Allow using viscFacInAd to recompute viscosities in AD
-C #define AUTODIFF_ALLOW_VISCFACADJ (c68r)
+C   turned on for adjoint modeling (c68r-AD)
+#define AUTODIFF_ALLOW_VISCFACADJ
 
 C o To remove part of MOM_CALC_VISC (better name would be: MOM_DISABLE_*)
 C #undef AUTODIFF_DISABLE_LEITH (c68r)

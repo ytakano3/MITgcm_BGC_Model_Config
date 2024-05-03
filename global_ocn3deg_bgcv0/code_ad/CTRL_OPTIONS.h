@@ -31,71 +31,33 @@ C-- Package-specific Options & Macros go here
 
 C o I/O and pack settings
 #define CTRL_SET_PREC_32
-C undef CTRL_SET_PREC_32 (c68r)
-C o This option is only relevant (for pack/unpack) with OBCS_CONTROL: (c68r)
 #define ALLOW_NONDIMENSIONAL_CONTROL_IO
 #define ALLOW_PACKUNPACK_METHOD2
-C #undef ALLOW_NONDIMENSIONAL_CONTROL_IO (c68r)
-C #undef EXCLUDE_CTRL_PACK
-C #undef ALLOW_PACKUNPACK_METHOD2 (c68r)
-C #undef CTRL_DO_PACK_UNPACK_ONLY
-C #undef CTRL_PACK_PRECISE
-C #undef CTRL_UNPACK_PRECISE
-C #undef CTRL_DELZNORM
-C #undef ALLOW_CTRL_WETV
-  
+
 C This allows for GMREDI controls
 #define ALLOW_KAPGM_CONTROL
-#undef ALLOW_KAPGM_CONTROL_OLD
+# undef ALLOW_KAPGM_CONTROL_OLD
 #define ALLOW_KAPREDI_CONTROL
-#undef ALLOW_KAPREDI_CONTROL_OLD
-C #undef ALLOW_KAPGM_CONTROL
-C #undef ALLOW_KAPREDI_CONTROL
-C #undef ALLOW_BOTTOMDRAG_CONTROL
-C #undef ALLOW_DIC_CONTROL
+# undef ALLOW_KAPREDI_CONTROL_OLD
 
-C Allows bathymetry as a control vector (c68r) (no options)
-C #undef ALLOW_DEPTH_CONTROL
-C #ifdef ALLOW_DEPTH_CONTROL
-C   Only relevant within DEPTH_CONTROL code:
-C # define USE_SMOOTH_MIN
-C # undef ALLOW_HFACC_CONTROL
-C # undef ALLOW_HFACC3D_CONTROL
-C #endif /* ALLOW_DEPTH_CONTROL */
-
-C o Sets of controls (objective function)
+C o sets of controls
 #define ALLOW_GENTIM2D_CONTROL
 #define ALLOW_GENARR2D_CONTROL
 #define ALLOW_GENARR3D_CONTROL
-C # undef ALLOW_UVEL0_CONTROL
-C # undef ALLOW_VVEL0_CONTROL
-C # undef CTRL_SET_OLD_MAXCVARS_30
-C # undef CTRL_SET_OLD_MAXCVARS_40
-
-C o OPEN BOUNDARIES OPTION (c68r), (not included here)
 
 C  o use pkg/smooth correlation operator (incl. smoother) for 3D controls (Weaver, Courtier 01)
 C    This CPP option just sets the default for ctrlSmoothCorrel23 to .TRUE.
-#define ALLOW_SMOOTH_CORREL3D
+#undef ALLOW_SMOOTH_CORREL3D
 C  o use pkg/smooth correlation operator (incl. smoother) for 2D controls (Weaver, Courtier 01)
 C    This CPP option just sets the default for ctrlSmoothCorrel2D to .TRUE.
-#define ALLOW_SMOOTH_CORREL2D
+#undef ALLOW_SMOOTH_CORREL2D
 
-C  o Impose bounds on controls
+C  o impose bounds on controls
 #define ALLOW_ADCTRLBOUND
 
-C   o Rotate u/v vector control to zonal/meridional 
+C   o rotate u/v vector control to zonal/meridional 
 C   components
 #define ALLOW_ROTATE_UV_CONTROLS
-
-C  o Originally the first two time-reccords of control
-C    variable tau u and tau v were skipped.
-C    The CTRL_SKIP_FIRST_TWO_ATM_REC_ALL option extends this
-C    to the other the time variable atmospheric controls.
-C #undef CTRL_SKIP_FIRST_TWO_ATM_REC_ALL (c68r)
-
-C  o Print more debug info to STDOUT (c68r)
-C #undef ALLOW_CTRL_DEBUG
 
 C   ==================================================================
 #endif /* ndef ECCO_CPPOPTIONS_H */
