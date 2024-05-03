@@ -42,6 +42,7 @@
  useCDscheme =.TRUE.,
  useSinglecpuIO =.TRUE.,
  staggerTimeStep =.TRUE.,
+ debugLevel = 3,
  &
 
 # PARM02: Elliptic solver parameters
@@ -55,12 +56,16 @@
 # nIter0 = 1: Start from pickup files
 #
 # nTimeSteps = 720: 1 year simulation (testing)
+# nTimeSteps = 1440: 2 years simulation (testing)
+# nTimeSteps = 7200: 10 years simulation (adjoint)
 # nTimeSteps = 122400: 170 years simulation (co2 increase)
 # ----------
  &PARM03
 # nIter0 = 0,
  nIter0 = 1,
- nTimeSteps = 720,
+# nTimeSteps = 720,
+ nTimeSteps = 1440,
+# nTimeSteps = 7200,
 # nTimeSteps = 122400,
 
 # Time increment is 900 seconds for physics
@@ -82,8 +87,9 @@
  adjDumpFreq = 2592000.,
  dumpFreq = 2592000.,
  taveFreq = 2592000.,
- monitorFreq= 2592000.,
- adjMonitorFreq= 2592000.,
+ monitorFreq = 2592000.,
+ adjMonitorFreq = 2592000.,
+# pickupStrictlyMatch = .FALSE.,
 
 # pChkptFreq = 31104000.,
 # chkptFreq = 31104000.,

@@ -3,12 +3,22 @@
 # Formulation of Millero, 2010
 # ----------
  &ABIOTIC_PARMS
-  selectK1K2const = 5,
  &
 
-# Iron cycle model parameters
+# Carbon cycle model parameters
+# Note: We are using parameters from the tutorial (optimized based on
+#      ECCOv4-Darwin from David Ferreira and Jon Lauderdale),
+#      the default values are in the first lines, this should also work well
 # ----------
  &BIOTIC_PARMS
+#  alphaUniform = 2. _d -3/(360. _d 0 * 86400. _d 0)
+#               = 1.929012346.e-10,
+# timescale for biological activity
+#  rainRatioUniform = 7.e-2,
+# inorganic/organic carbon rain ratio
+#  KRemin = 0.9,
+# remin power law coeff
+
   alphaUniform = 0.97e-10,
   rainRatioUniform = 5.e-2,
   KRemin = 0.95,
