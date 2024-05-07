@@ -85,7 +85,7 @@ C In S/R CARBON_CHEM convert ak1 and ak2 to the total pH scale
 C  consistent with other coefficients (currently on the seawater scale).
 C NOTE: Has NO effect when CARBONCHEM_SOLVESAPHE is defined (different
 C  coeffs are used).
-#define CARBONCHEM_TOTALPHSCALE
+#undef CARBONCHEM_TOTALPHSCALE
 
 C When calculating the fraction of sinking organic matter, use model biomass diagnostics.
 #define NEW_FRAC_EXP
