@@ -82,7 +82,9 @@ A suggested strategy that has been used on a variety of HPC platforms is as foll
 
 1. Set `nchklev_1` as large as possible, up to the size allowed by memory on your machine. (Use the `size` command to estimate the memory per process. This should be just a little bit less than the maximum allowed on the machine).
 2. Next, set `nchklev_2` and `nchklev_3` to be large enough to accomodate the entire run. A common strategy is to set `nchklev_2 = nchklev_3 = sqrt(numsteps/nchklev_1) + 1`. 
-3. If the `nchklev_2` files get too big, then you may have to add a fourth level (i.e. `nchklev_4`), but this is unlikely. 
+3. If the `nchklev_2` files get too big, then you may have to add a fourth level (i.e. `nchklev_4`), but this is unlikely.
+
+Note that we need the product `nchklev_1*nchklev_2*nchklev_3` to be greater than the anticipated number of timesteps in the forward model run. So `nchklev_1*nchklev_2*nchklev_3>numsteps`.
 
 This strategy allows you to keep as much in memory as possible, minimising the I/O requirements for the disk. This is useful, as I/O is often the bottleneck for MITgcm runs on HPC. 
 
